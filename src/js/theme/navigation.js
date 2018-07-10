@@ -387,6 +387,20 @@ function preparePage(resetScroll) {
         return window.location.pathname == resolvedRef;
     });
 
+    if(param().token || window.innerWidth < 1024){
+        $(".head").hide();
+        $(".book").removeClass("with-header");
+    }else{
+        $(".head").show();
+        $(".book").addClass("with-header");
+    }
+
+    $("#js-book-summary-opr").on("click",function(e){
+        e.stopPropagation();
+        $(".book").addClass("with-summary")
+    })
+
+
     // Bind scrolling if summary contains more than one link to this page
     if ($chapters.length > 1) {
         $scroller.scroll(handleScrolling);

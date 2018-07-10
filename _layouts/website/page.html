@@ -28,9 +28,23 @@
 
 {% block body %}
 <div class="book">
+    <div class="head">
+        <h1 class="pull-left logo">
+            <a href="javascript:;"></a>
+        </h1>
+        <div class="pull-right">
+            {% block search_input %} super(){% endblock %}
+        </div>
+    </div>
+    <div class="subnav-box">
+        <div class="subnav-inner">
+            <div class="book-summary-opr" id="js-book-summary-opr">
+                <i class="fa fa-align-justify"></i>
+            </div>
+        </div>
+    </div>
     <div class="book-summary">
         {% block book_sidebar %}
-            {% block search_input %}{% endblock %}
             {% block book_summary %}
                 <nav role="navigation">
                 {% include "website/summary.html" %}
