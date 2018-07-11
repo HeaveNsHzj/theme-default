@@ -387,17 +387,10 @@ function preparePage(resetScroll) {
         return window.location.pathname == resolvedRef;
     });
 
-    if(param().token || window.innerWidth < 1024){
-        $(".head").hide();
-        $(".book").removeClass("with-header");
-    }else{
-        $(".head").show();
-        $(".book").addClass("with-header");
-    }
 
     $("#js-book-summary-opr").on("click",function(e){
         e.stopPropagation();
-        $(".book").addClass("with-summary")
+        $(".book").toggleClass("with-summary")
     })
 
 

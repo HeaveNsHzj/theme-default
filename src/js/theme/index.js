@@ -2,6 +2,7 @@ var dropdown =   require('./dropdown');
 var keyboard =   require('./keyboard');
 var navigation = require('./navigation');
 var sidebar =    require('./sidebar');
+var platform = require('./platform');
 //var toolbar =    require('./toolbar');
 
 var gitbook = window.gitbook;
@@ -43,7 +44,9 @@ gitbook.sidebar = sidebar;
 
 function checkSmallScreen(){
     if(platform.isSmallScreen()){
-        $(".book").removeClass("with-summary");
+        $(".book").removeClass("with-summary with-header");
+        $(".subnav-box").hide();
+
 
         $(document).on("click", function(){
             platform.isSmallScreen() && $(".book").removeClass('with-summary')
@@ -54,6 +57,9 @@ function checkSmallScreen(){
         });
 
     }else{
-        $(".book").addClass("with-summary")
+        $(".subnav-box").show();
+
+        $(".book").addClass("with-summary with-header")
     }
 }
+

@@ -27,20 +27,35 @@
 {% endblock %}
 
 {% block body %}
-<div class="book">
-    <div class="head">
+<div class="book with-summary with-header">
+    <div class="head clearfix">
         <h1 class="pull-left logo">
-            <a href="javascript:;"></a>
+            {% block logo %}
+            <a href="javascript:;">
+                <img src="https://admin.xiaoe-tech.com/images/admin/helpCenter/xeLogo.png"/>
+            </a>
+            {% endblock %}
         </h1>
+        <div class="book-summary-opr" id="js-book-summary-opr">
+            <i class="fa fa-align-justify"></i>
+        </div>
         <div class="pull-right">
-            {% block search_input %} super(){% endblock %}
+            {% block search_input %} {% endblock %}
         </div>
     </div>
     <div class="subnav-box">
         <div class="subnav-inner">
-            <div class="book-summary-opr" id="js-book-summary-opr">
-                <i class="fa fa-align-justify"></i>
-            </div>
+            {%block subnav %}
+                <ul class="sub-list pull-left">
+                    <li class="subnav-item active">
+                        <a href="javascript:;">常见问题</a>
+                    </li>
+                    <li class="subnav-item">
+                        <a href="javascript:;">新手上路</a>
+                    </li>
+                </ul>
+                {%block donwloadfile %}<a class="pull-right download">下载《产品使用手册》</a>{%endblock%}
+            {%endblock%}
         </div>
     </div>
     <div class="book-summary">
