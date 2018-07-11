@@ -6,6 +6,6 @@ module.exports = {
     },
     // Breakpoint for navigation links position
     isSmallScreen: function() {
-        return ($(document).width() <= 1240);
+        return ($(document).width() <= 1024);
     }
 };
