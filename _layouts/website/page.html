@@ -42,22 +42,24 @@
         <div class="pull-right">
             {% block search_input %} {% endblock %}
         </div>
-    </div>
-    <div class="subnav-box">
-        <div class="subnav-inner">
-            {%block subnav %}
-                <ul class="sub-list pull-left">
-                    <li class="subnav-item active">
-                        <a href="javascript:;">常见问题</a>
-                    </li>
-                    <li class="subnav-item">
-                        <a href="javascript:;">新手上路</a>
-                    </li>
-                </ul>
-                {%block donwloadfile %}<a class="pull-right download">下载《产品使用手册》</a>{%endblock%}
-            {%endblock%}
+        <div class="pull-right">
+            {%block donwloadfile %}<a class="download">下载《产品使用手册》</a>{%endblock%}
         </div>
     </div>
+    <!--<div class="subnav-box">-->
+        <!--<div class="subnav-inner">-->
+            <!--{%block subnav %}-->
+                <!--<ul class="sub-list pull-left">-->
+                    <!--<li class="subnav-item active">-->
+                        <!--<a href="javascript:;">常见问题</a>-->
+                    <!--</li>-->
+                    <!--<li class="subnav-item">-->
+                        <!--<a href="javascript:;">新手上路</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--{%endblock%}-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="book-summary">
         {% block book_sidebar %}
             {% block book_summary %}
@@ -85,6 +87,10 @@
                             {% endblock %}
                         </div>
                     </div>
+                {% endblock %}
+
+                {% block page_footer %}
+                    <div id="footer"></div>
                 {% endblock %}
             </div>
 
